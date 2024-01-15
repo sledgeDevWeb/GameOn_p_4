@@ -6,8 +6,10 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 ;
   padding: 0;
+ 
+
 }
 
 /* Landing Page */
@@ -21,7 +23,8 @@ body {
   font-size: 18px;
   width: 100%;
   max-width: 1300px;
-
+  margin: 0 auto;
+  
 }
 
 p {
@@ -31,6 +34,18 @@ p {
 
 img {
   padding-right: 1rem;
+}
+
+.topnav {
+  overflow: hidden;
+  margin: 3.5%;
+}
+
+.header-logo {
+    float: left;
+}
+.main-navbar {
+    float: right;
 }
 
 .topnav {
@@ -85,7 +100,7 @@ img {
 
 
 main {
-  font-size: 100%;
+  /* font-size: 100%; */
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
@@ -444,7 +459,7 @@ input[data-error]::after {
 }
 
 .hero-headline {
-  /* white-space: nowrap; */
+  white-space: nowrap; 
   width: 100%;
   max-width: 640px;
   height: 240px;
@@ -487,6 +502,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  border-radius: 15px;
 }
 
 .copyrights {
@@ -511,16 +527,21 @@ footer {
 
 /* mediaquery */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  .topnav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 12px 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+  }
+}
 
 @media screen and (max-width: 768px) {
-  body {
-    border: 1px solid red;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
+ 
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -537,13 +558,17 @@ footer {
   }
 
   .topnav {
-    gap: 18rem;
+    gap: 19rem;
   }
 
   .header-logo img {
     width: 100%;
-    max-width: 103px;
-    height: 19px;
+    max-width: 120px;
+    height: 22px;
+  }
+
+  img {
+    padding-right: 0rem;
   }
 
   .hero-img img {
@@ -551,7 +576,6 @@ footer {
   }
 
   .hero-headline {
-
     width: 100%;
     max-width: 640px;
     height: auto;
@@ -563,10 +587,8 @@ footer {
     width: 100%;
     max-width: 640px;
     height: 85px;
-    margin-top: 120px;
+    margin-top: 50px;
   }
-
-
 
   .hero-content::after {
     content: unset;
@@ -595,7 +617,11 @@ footer {
   .topnav a.icon {
     float: right;
     display: block;
-    color: #fe142f;
+    /* color: #fe142f; */
+  }
+  .topnav .icon {
+  
+    color: #fe142f; 
   }
 
   .topnav.responsive {
