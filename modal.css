@@ -23,7 +23,7 @@ body {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  /* border: 1px solid red; */
+ 
   
 }
 
@@ -36,10 +36,9 @@ img {
   padding-right: 1rem;
 }
 
-/* .topnav {
-  overflow: hidden;
-  margin: 3.5%;
-} */
+.topnav {
+
+} 
 
 .header-logo {
     float: left;
@@ -577,7 +576,7 @@ footer {
     align-items: unset;
     gap: 0.5rem;
     flex-direction: column;
-   
+   padding-right: 10px;
   }
 
   .topnav {
@@ -588,7 +587,7 @@ footer {
   .header-logo img {
     width: 100%;
     max-width: 120px;
-    height: 22px;
+    height: 32px;
   }
 
   img {
@@ -654,8 +653,9 @@ footer {
 
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 56px;
+    top: 20px;
+    color: white;
   }
 
   .topnav.responsive a {
@@ -683,6 +683,12 @@ footer {
     font-size: 36px;
     line-height: 52px;
 
+  }
+
+  .topnav.responsive .icon {
+   
+    right: 9px;
+   
   }
 
   .hero-text {

@@ -25,7 +25,15 @@ var close_btn = document.querySelector(".close");
 console.log(close_btn);
 
 close_btn.addEventListener("click", () =>{
-  console.log("click me now");
-
-close_btn.classList.toggle("close")
+  modalbg.style.display = "none"
 })
+
+let myform = document.querySelector('form')
+myform.addEventListener('submit', (e) =>{
+  e.preventDefault()
+
+
+
+
+})
+
