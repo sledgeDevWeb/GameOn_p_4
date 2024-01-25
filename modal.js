@@ -39,6 +39,7 @@ close_btn.addEventListener("click", () =>{
 // récupérer les valeurs de ce qu'on tape dans les champs console.log(   .value)
 // pour y ajouter des vérifications
 
+
 let form = document.querySelector("form")
 form.addEventListener("submit", (event) => {
   event.preventDefault()
@@ -50,12 +51,12 @@ form.addEventListener("submit", (event) => {
     return name.length >= 2
   }
   if (validName(first)) {
-    document.getElementById("firstNameError").innerText = "" // Efface le message d'erreur s'il y en a un
+    document.getElementById("name_error").innerText = "" // Efface le message d'erreur s'il y en a un
     console.log("Le prénom est valide.")
     baliseFirstName.classList.remove("error")
   } else {
-    // Affiche un message d'erreur dans la div portant l'id "firstNameError"
-    document.getElementById("firstNameError").innerText = "Veuillez saisir au moins 2 caractères."
+    // Affiche un message d'erreur dans le span portant l'id "name_error"
+    document.getElementById("name_error").innerText = "Veuillez saisir au moins 2 caractères."
     
     // Ajoute la classe error
     baliseFirstName.classList.add("error")
@@ -66,57 +67,38 @@ let baliseLastName = document.getElementById("last")
 let last = baliseLastName.value
 
 if (validName(last)) {
-  document.getElementById("lastNameError").innerText = "" // Efface le message d'erreur s'il y en a un
+  document.getElementById("lastname_error").innerText = "" // Efface le message d'erreur s'il y en a un
   console.log("Le nom est valide.")
   baliseLastName.classList.remove("error")
 } else {
-  // Affiche un message d'erreur dans la div portant l'id "lastNameError"
-  document.getElementById("lastNameError").innerText = "Veuillez saisir au moins 2 caractères."
+  // Affiche un message d'erreur dans la div portant l'id "lastname_error"
+  document.getElementById("lastname_error").innerText = "Veuillez saisir au moins 2 caractères."
   
   // Ajoute la classe error
   baliseLastName.classList.add("error")
 }
 
+ // Récupérer, écouter et vérifier l'entrée de l'Email
+ let baliseEmail = document.getElementById("email")
+ let email = baliseEmail.value
+ function validEmail(email) {
+   let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
+   if (emailRegExp.test(email)) {
+     return true
+   }
+   return false
+ }
+ if (validEmail(email)) {
+   document.getElementById("email_error").innerText = "" // Efface le message d'erreur s'il y en a un
+   console.log("L'e-mail est valide.")
+   baliseEmail.classList.remove("error")
+ } else {
+   // Affiche un message d'erreur dans la div portant l'id "email_error"
+   document.getElementById("email_error").innerText = "L'adresse e-mail est invalide."
+   console.error("L'adresse e-mail est invalide.")
+   // Ajoute la classe error
+   baliseEmail.classList.add("error")
+ }
+
+
 })
-
-
-
-
-
-//  var emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
-
-//  if (!mymail.value.match(new RegExp)) {
-//   mymail.innerHTML = "invalid email"
-
-//  }
-
-  
-
-
-
-
-
-// let myform = document.querySelector('form')
-
-// myform.addEventListener('submit', (e) => {
- 
-// var erreur;
-
-// var myinput = document.getElementsByName('input');
-// for (var i = 0; i < myinput.length; i++) {
-//   if (! myinput[i].value) {
-//     erreur.innerHTML = "Veuillez renseigner tous les champs";
-   
-//   }
-  
-// }
-
-// if (erreur) {
-//   e.preventDefault();
-//   document.getElementById('erreur').innerHTML = erreur;
-//   return false;
-// }
-
-
-
-// })
