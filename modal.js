@@ -52,6 +52,11 @@ form.addEventListener("submit", (event) => {
   }
   if (validName(first)) {
     document.getElementById("name_error").innerText = "" // Efface le message d'erreur s'il y en a un
+    console.log(first.dataset.data-error)
+    baliseFirstName.classList.remove("error")
+ 
+  } else if(first==null || first==""){
+    document.getElementById("name_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
     console.log("Le prénom est valide.")
     baliseFirstName.classList.remove("error")
   } else {
@@ -70,8 +75,15 @@ if (validName(last)) {
   document.getElementById("lastname_error").innerText = "" // Efface le message d'erreur s'il y en a un
   console.log("Le nom est valide.")
   baliseLastName.classList.remove("error")
-} else {
-  // Affiche un message d'erreur dans la div portant l'id "lastname_error"
+}
+
+ else if(last==null || last==""){
+  document.getElementById("lastname_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
+  console.log("Le prénom est valide.")
+  baliseFirstName.classList.remove("error")
+}
+else {
+  // Affiche un message d'erreur dans le span portant l'id "lastname_error"
   document.getElementById("lastname_error").innerText = "Veuillez saisir au moins 2 caractères."
   
   // Ajoute la classe error
@@ -90,9 +102,17 @@ if (validName(last)) {
  }
  if (validEmail(email)) {
    document.getElementById("email_error").innerText = "" // Efface le message d'erreur s'il y en a un
-   console.log("L'e-mail est valide.")
+   
    baliseEmail.classList.remove("error")
- } else {
+ } 
+
+ else if(email==null || email==""){
+  document.getElementById("email_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
+  
+  baliseFirstName.classList.remove("error")
+}
+ 
+ else {
    // Affiche un message d'erreur dans la div portant l'id "email_error"
    document.getElementById("email_error").innerText = "L'adresse e-mail est invalide."
    console.error("L'adresse e-mail est invalide.")
