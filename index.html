@@ -58,18 +58,27 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" novalidate onsubmit="return validate();">
-            <div class="formData">
+         
+          <form name="reserve" action="index.html" method="post" novalidate >
+            <div id="firstNameError" class="formData" data-error-visible="" data-error="Veuillez entrer 2 caractères ou plus pour le prénom">
+           
               <label>Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first"  /><br>
+              <span id="name_error"></span>
             </div>
-            <div class="formData">
+
+
+
+            <div id="lastNameError" class="formData" data-error-visible="" data-error="Veuillez entrer 2 caractères ou plus pour le Nom">
               <label>Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
+              <span id="lastname_error"></span>
             </div>
+            
             <div class="formData">
               <label>E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" /><br>
+              <span id="email_error"></span>
             </div>
             <div class="formData">
               <label>Date de naissance</label><br>
@@ -122,7 +131,11 @@
               <br>
             </div>
             <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+
+            
           </form>
+
+          <p id="erreur"></p>
         </div>
       </div>
     </div>
