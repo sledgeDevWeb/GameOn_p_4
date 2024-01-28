@@ -50,12 +50,13 @@ form.addEventListener("submit", (event) => {
   function validName(name) {
     return name.length >= 2
   }
+
   if (validName(first)) {
     document.getElementById("name_error").innerText = "" // Efface le message d'erreur s'il y en a un
-    console.log(first.dataset.data-error)
+   
     baliseFirstName.classList.remove("error")
  
-  } else if(first==null || first==""){
+  } else if(first===null || first==""){
     document.getElementById("name_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
     console.log("Le prénom est valide.")
     baliseFirstName.classList.remove("error")
@@ -77,7 +78,7 @@ if (validName(last)) {
   baliseLastName.classList.remove("error")
 }
 
- else if(last==null || last==""){
+ else if(last===null || last==""){
   document.getElementById("lastname_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
   console.log("Le prénom est valide.")
   baliseFirstName.classList.remove("error")
@@ -106,7 +107,7 @@ else {
    baliseEmail.classList.remove("error")
  } 
 
- else if(email==null || email==""){
+ else if(email===null || email==""){
   document.getElementById("email_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
   
   baliseFirstName.classList.remove("error")
@@ -119,6 +120,79 @@ else {
    // Ajoute la classe error
    baliseEmail.classList.add("error")
  }
+
+   // Récupérer, écouter et vérifier l'entrée du nombre de participation
+  let baliseNumberParticipation = document.getElementById("quantity")
+  
+  
+  if(baliseNumberParticipation.value===null || baliseNumberParticipation.value==""){
+  document.getElementById("quantity_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
+  console.log("Veuillez renseigner le champ.")
+  baliseFirstName.classList.remove("error")
+}
+
+else if (baliseNumberParticipation.value  <= 9) {
+  document.getElementById("quantity_error").innerText = "" // Efface le message d'erreur s'il y en a un
+  console.log("Le nombre de participation est valide.")
+  baliseNumberParticipation.classList.remove("error")
+} 
+  else {
+    // Affiche un message d'erreur dans le span portant l'id "quantity_errorr"
+    document.getElementById("quantity_error").innerText = "Veuillez saisir au moins un nombre."
+    console.error("Veuillez saisir au moins un nombre.")
+    // Ajoute la classe error
+    baliseNumberParticipation.classList.add("error")
+  }
+// Troisième étape : vérifier si un des boutons radio est coché et si oui lequel
+
+let listBtnRadio = document.querySelectorAll(".formData input[type=radio]")
+
+// Converti la collection NodeList en un tableau
+let listBtnRadioArray = Array.from(listBtnRadio)
+
+// Initialise une variable pour savoir si un bouton radio est coché
+let isRadioButtonChecked = false
+
+for (let index = 0; index < listBtnRadioArray.length; index++) {
+  if (listBtnRadioArray[index].checked) {
+    // Affiche le choix sélectionné
+    document.getElementById("location_error").innerText = "" // Efface le message d'erreur si nécessaire
+    console.log("Ville souhaitée : ", listBtnRadioArray[index].value)
+    listBtnRadioArray[index].classList.remove("error-checkbox")
+    isRadioButtonChecked = true
+    break
+  }
+}
+
+// Afficher un message d'erreur si aucun bouton radio n'est coché
+if (!isRadioButtonChecked) {
+  // Affiche un message d'erreur dans la div portant l'id "cityError"
+  document.getElementById("location_error").innerText = "Veuillez sélectionner une ville."
+  console.error("Veuillez sélectionner une ville.")
+
+  for (let index = 0; index < listBtnRadioArray.length; index++) {
+    // Supprime la classe checkbox-label
+    listBtnRadioArray[index].classList.remove("checkbox-label")
+
+    // Ajoute la classe error-checkbox
+    listBtnRadioArray[index].classList.add("error-checkbox")
+  }
+}
+
+// Quatrième étape : vérifier si les checks sont cochés ou non.
+
+// Récupérer la checkbox "Conditions d'utilisation" est cochée
+let checkboxConditions = document.getElementById("checkbox1")
+
+// Vérifier si la checkbox "Conditions d'utilisation" est cochée
+let isCheckboxConditionsChecked = checkboxConditions.checked
+
+if (isCheckboxConditionsChecked) {
+  document.getElementById("checkbox_error").innerText = ""
+} else {
+  // Affiche un message d'erreur dans le span portant l'id "checkbox_error"
+  document.getElementById("checkbox_error").innerText = "Veuillez accepter les conditions d'utilisation."
+}
 
 
 })
