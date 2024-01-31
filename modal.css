@@ -647,7 +647,7 @@ footer {
     width: 100%;
     max-width: 640px;
     height: auto;
-    font-size: 64px;
+    font-size: 10.5vw;
     line-height: 75px;
   }
 
@@ -723,7 +723,7 @@ footer {
     width: 100%;
     width: 354px;
     height: 109px;
-    font-size: 36px;
+    font-size: 10.5vw;
     line-height: 52px;
   }
 
