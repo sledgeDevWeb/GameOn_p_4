@@ -6,15 +6,13 @@
 
 * {
   box-sizing: border-box;
-  margin: 0 ;
+  margin: 0;
   padding: 0;
-
 }
 
 /* Landing Page */
 
 body {
-
   display: flex;
   flex-direction: column;
   background-image: url("background.png");
@@ -23,8 +21,6 @@ body {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
- 
-  
 }
 
 p {
@@ -36,15 +32,12 @@ img {
   padding-right: 1rem;
 }
 
-.topnav {
-
-} 
-
 .header-logo {
-    float: left;
+  float: left;
 }
+
 .main-navbar {
-    float: right;
+  float: right;
 }
 
 .topnav {
@@ -96,7 +89,6 @@ img {
 .topnav .icon {
   display: none;
 }
-
 
 main {
   /* font-size: 100%; */
@@ -204,6 +196,14 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.myError {
+  color: red;
 }
 
 .formData[data-error]::after {
@@ -459,9 +459,9 @@ input[data-error]::after {
 }
 
 .hero-headline {
-  white-space: nowrap; 
-  width: 100%;
-  max-width: 640px;
+  white-space: nowrap;
+
+  
   height: 240px;
   font-family: DM Sans;
   font-size: 96px;
@@ -476,7 +476,7 @@ input[data-error]::after {
   height: 93px;
   margin-top: 57px;
   font-family: DM Sans;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 400;
   line-height: 31.25px;
   letter-spacing: 0px;
@@ -505,6 +505,55 @@ input[data-error]::after {
   border-radius: 15px;
 }
 
+.message {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 536px;
+  height: 850.61px;
+  background-color: #232323;
+  color: #fff;
+  border-radius: 7px;
+
+}
+
+
+.message i {
+  display: flex;
+  justify-content: flex-end;
+  width: 31vw;
+  height: 16.83px;
+  color: #fff;
+  margin-top: 15px;
+
+}
+
+.messageConfirm {
+  width: 271px;
+  height: 102px;
+  font-family: DM Sans;
+  font-size: 35.5px;
+  font-weight: 400;
+  line-height: 51px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#clossMessage {
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+
 .copyrights {
   color: #fe142f;
   padding: 0;
@@ -523,15 +572,13 @@ footer {
   margin: 0 20px;
 }
 
-
-
 /* mediaquery */
 
 @media screen and (max-width: 1024px) {
-
-  body{
+  body {
     padding-left: 5px;
   }
+
   .topnav a {
     float: left;
     display: block;
@@ -544,19 +591,17 @@ footer {
   }
 
   .hero-headline {
-    white-space: nowrap; 
+    white-space: nowrap;
     font-size: 74px;
     line-height: 90px;
   }
 
   .hero-text {
-  
     margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 768px) {
- 
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -573,11 +618,10 @@ footer {
   }
 
   .main-navbar {
-  
     align-items: unset;
     gap: 0.5rem;
     flex-direction: column;
-   padding-right: 10px;
+    padding-right: 10px;
   }
 
   .topnav {
@@ -622,7 +666,6 @@ footer {
     display: none;
   }
 
-
   .hero-section>.btn-signup {
     display: block;
     margin: 32px auto 10px;
@@ -643,9 +686,10 @@ footer {
     display: block;
     /* color: #fe142f; */
   }
+
   .topnav .icon {
-  
-    color: #fe142f; 
+    color: #fe142f;
+    font-size: 30px;
   }
 
   .topnav.responsive {
@@ -666,7 +710,6 @@ footer {
   }
 }
 
-
 @media screen and (max-width: 480px) {
   main {
     margin: 1px;
@@ -677,26 +720,22 @@ footer {
   }
 
   .hero-headline {
-
     width: 100%;
     width: 354px;
     height: 109px;
     font-size: 36px;
     line-height: 52px;
-
   }
 
   .topnav.responsive .icon {
-   
     right: 9px;
-   
   }
 
   .hero-text {
     width: 100%;
-    max-width: 341px;
+    max-width: 345px;
     height: 34px;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 17px;
     margin-top: 30px;
   }
@@ -704,5 +743,4 @@ footer {
   .hero-img img {
     margin-top: 25px;
   }
-
 }
