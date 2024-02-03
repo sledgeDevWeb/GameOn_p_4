@@ -699,7 +699,7 @@ footer {
   .topnav.responsive .icon {
     position: absolute;
     right: 56px;
-    top: 20px;
+    top: 15px;
     color: white;
   }
 
@@ -742,5 +742,10 @@ footer {
 
   .hero-img img {
     margin-top: 25px;
+  }
+
+  .topnav .icon {
+    
+    font-size: 25px;
   }
 }

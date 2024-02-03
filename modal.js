@@ -207,9 +207,9 @@ if (isCheckboxConditionsChecked) {
     validName(first)
     && validName(last)
     && validEmail(email)
-    && baliseNumberParticipation(quantity)
-    && isRadioButtonChecked
-    && isCheckboxConditionsChecked
+    // && baliseNumberParticipation(quantity)
+    // && isRadioButtonChecked
+    // && isCheckboxConditionsChecked
   ) {
     console.log("Prénom : ", baliseFirstName.value)
     console.log("Nom : ", baliseLastName.value)
@@ -218,20 +218,23 @@ if (isCheckboxConditionsChecked) {
     console.log("Les conditions générales d'utilisation sont acceptés.")
 
     form.reset()
-    form.style.display = "none"
+    form.style.display = "flex"
 
     let messageThanks = document.querySelector(".message")
     messageThanks.style.display = "flex"
 
-    document.querySelector("message button")
+    document.querySelector(".message ")
         .addEventListener("click", () => {
           modalbg.style.display = "none"
+          console.log("background")
           form.style.display = "block"
           messageThanks.style.display = "none"
         })
-  } else {
-    console.log("Certains champs ne sont pas valides")
-  }
+      }
+  
+  else {
+     console.log("Certains champs ne sont pas valides")
+   }
 
 
 })
