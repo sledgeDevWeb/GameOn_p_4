@@ -51,7 +51,7 @@ form.addEventListener("submit", (event) => {
     return firstname.length >= 2
   }
 
-  if (validName(firstname)) {
+  if (validName(firstname.trim())) {
     document.getElementById("firstname_error").innerText = "" // Efface le message d'erreur s'il y en a un
     console.log("Le Prenom est valide.")
    
@@ -73,7 +73,7 @@ form.addEventListener("submit", (event) => {
 let baliseLastName = document.getElementById("last")
 let last = baliseLastName.value
 
-if (validName(last)) {
+if (validName(last.trim())) {
   document.getElementById("lastname_error").innerText = "" // Efface le message d'erreur s'il y en a un
   console.log("Le nom est valide.")
   baliseLastName.classList.remove("error")
@@ -122,6 +122,41 @@ else {
    // Ajoute la classe error
    baliseEmail.classList.add("error")
  }
+
+  // Récupérer, écouter et vérifier l'entrée de la date de naissance
+  function isDateValid(dateString) {
+    // Vérifier si dateString est une chaîne de caractères
+    if (typeof dateString !== 'string') {
+      return false
+    }
+
+    // Vérifier si la chaîne de date n'est pas vide
+    if (dateString.trim() === '') {
+      return false
+    }
+
+    // Créer une instance de Date en utilisant la chaîne fournie
+    let date = new Date(dateString)
+
+    // Vérifier si la date est valide (et que la chaîne n'était pas invalide)
+    return !isNaN(date.getTime())
+  }
+
+  let baliseBirthdate = document.getElementById("birthdate")
+  let birthdateValue = baliseBirthdate.value
+
+  if (isDateValid(birthdateValue)) {
+      document.getElementById("birthdate_error").innerText = "" // Efface le message d'erreur s'il y en a un
+      console.log("La date de naissance est valide.")
+      baliseBirthdate.classList.remove("error")
+    } else {
+    // Affiche un message d'erreur dans la div portant l'id "birthError"
+      document.getElementById("birthdate_error").innerText = "La date de naissance est invalide."
+      console.error("La date de naissance est invalide.")
+    // Ajoute la classe error
+    baliseBirthdate.classList.add("error")
+    }
+
 
    // Récupérer, écouter et vérifier l'entrée du nombre de participation
   let baliseNumberParticipation = document.getElementById("quantity")
@@ -204,26 +239,27 @@ if (isCheckboxConditionsChecked) {
 
   // Vérifie si tous les champs sont valides
   if (
-    validName(first)
-    && validName(last)
-    && validEmail(email)
-    // && baliseNumberParticipation(quantity)
-    // && isRadioButtonChecked
-    // && isCheckboxConditionsChecked
+     (first)
+     && (last)
+    && (email)
+    && isDateValid(birthdateValue)
+     && (quantity)
+     && isRadioButtonChecked
+     && isCheckboxConditionsChecked
   ) {
-    console.log("Prénom : ", baliseFirstName.value)
-    console.log("Nom : ", baliseLastName.value)
-    console.log("Email : ", baliseEmail.value)
-    console.log("Nombre de participation : ", baliseNumberParticipation.value)
-    console.log("Les conditions générales d'utilisation sont acceptés.")
+    console.log( baliseFirstName.value)
+     console.log("Nom : ", baliseLastName.value)
+     console.log("Email : ", baliseEmail.value)
+     console.log("Nombre de participation : ", baliseNumberParticipation.value)
+     console.log("Les conditions générales d'utilisation sont acceptés.")
 
-    form.reset()
-    form.style.display = "flex"
+    form.reset();
+    form.style.display = "none"
 
-    let messageThanks = document.querySelector(".message")
+    let messageThanks = document.querySelector(".thanks")
     messageThanks.style.display = "flex"
 
-    document.querySelector(".message ")
+    document.querySelector(".thanks button ")
         .addEventListener("click", () => {
           modalbg.style.display = "none"
           console.log("background")
@@ -232,9 +268,9 @@ if (isCheckboxConditionsChecked) {
         })
       }
   
-  else {
-     console.log("Certains champs ne sont pas valides")
-   }
+   else {
+      console.log("Certains champs ne sont pas valides")
+  }
 
 
 })

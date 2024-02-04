@@ -204,6 +204,7 @@ input {
 
 .myError {
   color: red;
+  font-size: 0.6rem;
 }
 
 .formData[data-error]::after {
@@ -505,42 +506,34 @@ input[data-error]::after {
   border-radius: 15px;
 }
 
-.message {
+.thanks {
   display: none;
+  position: relative;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 536px;
-  height: 850.61px;
-  background-color: #232323;
-  color: #fff;
-  border-radius: 7px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  height: 40rem;
+  justify-content: center;
 
 }
 
-
-.message i {
-  display: flex;
-  justify-content: flex-end;
-  width: 31vw;
-  height: 16.83px;
-  color: #fff;
-  margin-top: 15px;
-
-}
-
-.messageConfirm {
-  width: 271px;
-  height: 102px;
+.message-thanks {
+ 
   font-family: DM Sans;
-  font-size: 35.5px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 51px;
   letter-spacing: 0em;
   text-align: center;
 }
 
-#clossMessage {
+.thanks button {
+  position: absolute;
+  bottom: 0;
+}
+
+/* .button {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -551,7 +544,7 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
-}
+} */
 
 
 .copyrights {
@@ -570,6 +563,16 @@ footer {
   padding-left: 2vw;
   padding-right: 2vw;
   margin: 0 20px;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* mediaquery */
