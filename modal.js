@@ -136,19 +136,32 @@ else {
     }
 
     // Créer une instance de Date en utilisant la chaîne fournie
-    let date = new Date(dateString)
+    const currentDate= new Date(dateString)
+    
+    
 
     // Vérifier si la date est valide (et que la chaîne n'était pas invalide)
-    return !isNaN(date.getTime())
+    return !isNaN(currentDate.getTime())
   }
 
   let baliseBirthdate = document.getElementById("birthdate")
   let birthdateValue = baliseBirthdate.value
 
-  if (isDateValid(birthdateValue)) {
+      
+
+  if (isDateValid(birthdateValue )) {
       document.getElementById("birthdate_error").innerText = "" // Efface le message d'erreur s'il y en a un
       console.log("La date de naissance est valide.")
       baliseBirthdate.classList.remove("error")
+    } 
+    
+    else if(birthdateValue < currentDate) {
+    // Affiche un message d'erreur dans la div portant l'id "birthError"
+      document.getElementById("birthdate_error").innerText = "La date de naissance est invalide."
+      console.error("La date de naissance est invalide.")
+    // Ajoute la classe error
+    baliseBirthdate.classList.add("error")
+    
     } else {
     // Affiche un message d'erreur dans la div portant l'id "birthError"
       document.getElementById("birthdate_error").innerText = "La date de naissance est invalide."
