@@ -204,7 +204,7 @@ input {
 
 .myError {
   color: red;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 .formData[data-error]::after {
@@ -628,7 +628,8 @@ footer {
   }
 
   .topnav {
-    gap: 19rem;
+    gap: 11rem;
+    
     align-items: unset;
   }
 
