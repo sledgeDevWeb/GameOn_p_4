@@ -126,7 +126,7 @@ main {
 
 /* Modal form */
 
-.button {
+#button {
   background: #fe142f;
   margin-top: 0.5em;
   padding: 1em;
@@ -136,7 +136,7 @@ main {
   font-size: 16px;
 }
 
-.button:hover {
+#button:hover {
   background: #3876ac;
 }
 
