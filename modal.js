@@ -225,45 +225,45 @@ form.addEventListener("submit", (event) => {
 
     // Créer une instance de Date en utilisant la chaîne fournie
     const currentDate = new Date(dateString).toDateString();
-    
+
 
     // Vérifier si la date est valide (et que la chaîne n'était pas invalide)
     return !isNaN(currentDate.getTime())
   }
 
-  let baliseBirthdate = document.getElementById('birthdate').value;  
+  // let baliseBirthdate = document.getElementById('birthdate').value;  
 
-  let currentDate = new Date();
-  let selectedDate = new Date(baliseBirthdate);
+  // let currentDate = new Date();
+  // let selectedDate = new Date(baliseBirthdate);
 
-  if (selectedDate > currentDate) {
-    // Affiche un message d'erreur dans la div portant l'id "birthError"
-    document.getElementById("birthdate_error").innerText = "La date de naissance est invalide."
-    console.error("La date de naissance est invalide.")
-    // Ajoute la classe error
-    baliseBirthdate.classList.add("error")
+  // if (selectedDate > currentDate) {
+  //   // Affiche un message d'erreur dans la div portant l'id "birthError"
+  //   document.getElementById("birthdate_error").innerText = "La date de naissance est invalide."
+  //   console.error("La date de naissance est invalide.")
+  //   // Ajoute la classe error
+  //   baliseBirthdate.classList.add("error")
 
-  }
+  // }
     
-  else if (baliseBirthdate === null || baliseBirthdate == "") {
-    document.getElementById("birthdate_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
-    console.log("Veuillez renseigner le champ.")
-    baliseFirstName.classList.remove("error")
-  }
+  // else if (baliseBirthdate === null || baliseBirthdate == "") {
+  //   document.getElementById("birthdate_error").innerText = "Veuillez renseigner le champ" // Efface le message d'erreur s'il y en a un
+  //   console.log("Veuillez renseigner le champ.")
+  //   baliseFirstName.classList.remove("error")
+  // }
 
 
-   else {
-    document.getElementById("birthdate_error").innerText = "" // Efface le message d'erreur s'il y en a un
-    console.log("La date de naissance est valide.")
-    baliseBirthdate.classList.remove("error")
-  }
+  //  else {
+  //   document.getElementById("birthdate_error").innerText = "" // Efface le message d'erreur s'il y en a un
+  //   console.log("La date de naissance est valide.")
+  //   baliseBirthdate.classList.remove("error")
+  // }
 
   // Vérifie si tous les champs sont valides
   if (
     (first)
     && (last)
     && (email)
-    && isDateValid(birthdateValue)
+    // && isDateValid(birthdateValue)
     && (quantity)
     && isRadioButtonChecked
     && isCheckboxConditionsChecked
